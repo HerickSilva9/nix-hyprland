@@ -84,6 +84,8 @@
   kitty
   tree
 
+  kdePackages.dolphin
+
   wayland
   uwsm
 
@@ -93,6 +95,7 @@
 
   waybar
   wofi
+  swaybg
 
   gnome-keyring
   libsecret
@@ -142,7 +145,15 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-  fonts.packages = with pkgs; [ noto-fonts ];
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-color-emoji
+    roboto
+    open-sans
+    nerd-fonts.jetbrains-mono
+    ubuntu_font_family
+    font-awesome
+  ];
   
   services.pipewire.enable = true;
 
