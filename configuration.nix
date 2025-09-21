@@ -18,8 +18,8 @@
   boot.loader.grub = {
     enable = true;
     efiSupport =  true;
-    device = "nodev";
     useOSProber = true;
+    device = "nodev";
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -74,6 +74,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  # Bootloader
   grub2
   efibootmgr
   os-prober
@@ -102,7 +103,13 @@
   polkit
   
   google-chrome
-  vscode  
+  vscode
+  gnome-calculator
+
+  # Themes
+  dracula-theme
+  dracula-icon-theme
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -132,6 +139,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
+  # Drivers
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
 
@@ -145,6 +153,9 @@
 
   services.gnome.gnome-keyring.enable = true;
 
+  services.pipewire.enable = true;
+
+  # Fonts
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-color-emoji
@@ -154,7 +165,11 @@
     ubuntu_font_family
     font-awesome
   ];
-  
-  services.pipewire.enable = true;
+
+  # Environment variables
+  environment.variables = {
+    GTK_THEME = "Dracula";
+    ICON_THEME = "Dracula";
+  };
 
 }
