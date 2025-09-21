@@ -1,0 +1,6 @@
+# NixOS
+
+To install GRUB on NixOS, copy the `configuration.nix` file to `/etc/nixos/` and run the command below during the first installation
+```bash
+sudo nixos-rebuild switch --install-bootloader
+```
