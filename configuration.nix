@@ -121,6 +121,7 @@
   freerdp
   steam-run
   dpkg
+  remmina
 
   appimage-run
 
