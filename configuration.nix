@@ -64,7 +64,7 @@
   users.users.herick = {
     isNormalUser = true;
     description = "Herick";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "qemu-libvirtd" "libvirtd"];
     packages = with pkgs; [];
   };
 
@@ -84,6 +84,7 @@
   curl
   kitty
   tree
+  neofetch
 
   kdePackages.dolphin
 
@@ -101,6 +102,7 @@
   gnome-keyring
   libsecret
   polkit
+  polkit_gnome
   
   google-chrome
   vscode
@@ -110,6 +112,13 @@
   dracula-theme
   dracula-icon-theme
 
+  # Virtualisation
+  docker
+  docker-compose
+
+  virt-manager
+  libvirt
+  qemu
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -171,5 +180,12 @@
     GTK_THEME = "Dracula";
     ICON_THEME = "Dracula";
   };
+
+  # Virtualisation
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
+  boot.kernelModules = ["kvm" "kvm_amd"];
 
 }
