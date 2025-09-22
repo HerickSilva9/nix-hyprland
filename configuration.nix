@@ -115,10 +115,15 @@
   # Virtualisation
   docker
   docker-compose
-
   virt-manager
   libvirt
   qemu
+  freerdp
+  steam-run
+  dpkg
+
+  appimage-run
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -186,6 +191,5 @@
     docker.enable = true;
     libvirtd.enable = true;
   };
-  boot.kernelModules = ["kvm" "kvm_amd"];
-
+  boot.kernelModules = ["kvm" "kvm_amd" "ip_tables" "iptable_nat"];
 }
