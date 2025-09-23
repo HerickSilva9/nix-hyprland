@@ -98,6 +98,7 @@
   waybar
   wofi
   swaybg
+  hyprshot
 
   gnome-keyring
   libsecret
