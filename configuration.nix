@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./drivers.nix
     ];
 
   # Bootloader.
@@ -104,7 +105,7 @@
   libsecret
   polkit
   polkit_gnome
-  
+
   google-chrome
   vscode
   gnome-calculator
@@ -154,10 +155,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
-  # Drivers
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
 
   services.xserver.enable = true;
   programs.hyprland = {
