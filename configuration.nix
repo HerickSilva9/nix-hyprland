@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./drivers.nix
     ];
 
   # Bootloader.
@@ -99,13 +98,13 @@
   waybar
   wofi
   swaybg
-  hyprshot
+  grim slurp swappy
 
   gnome-keyring
   libsecret
   polkit
   polkit_gnome
-
+  
   google-chrome
   vscode
   gnome-calculator
@@ -156,6 +155,10 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
+  # Drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;
+
   services.xserver.enable = true;
   programs.hyprland = {
     enable = true;
@@ -191,4 +194,5 @@
     libvirtd.enable = true;
   };
   boot.kernelModules = ["kvm" "kvm_amd" "ip_tables" "iptable_nat"];
+
 }
