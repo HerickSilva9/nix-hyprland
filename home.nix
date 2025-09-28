@@ -6,5 +6,20 @@
 
   home.packages = with pkgs; [ ];
 
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    bashrcExtra = ''
+      # Carregar configuração personalizada de PATH
+      if [ -f "$HOME/.local/bin/env" ]; then
+        . "$HOME/.local/share/../bin/env"
+      fi
+      PS1='\n\[\e]0;\u@\h: \w\a\]\[\e[32;1m\]\u@\h:\w\$\[\e[0m\] '
+    '';
+    shellAliases = {
+      ll = "ls -l";
+      ".." = "cd ..";
+    };
+  };
   home.stateVersion = "24.11";
 }

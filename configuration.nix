@@ -110,7 +110,7 @@
   libsecret
   polkit
   polkit_gnome
-  
+
   google-chrome
   vscode
   gnome-calculator
