@@ -1,13 +1,10 @@
 { lib, pkgs, ... }:
 {
-  home = {
-    packages = with pkgs; [
-      
-    ];
 
-    username = "herick";
-    homeDirectory = "/home/herick";
+  home.username = "herick";
+  home.homeDirectory = "/home/herick";
 
-    stateVersion = "23.11";
-  };
+  home.packages = with pkgs; [ ];
+
+  home.stateVersion = "24.11";
 }

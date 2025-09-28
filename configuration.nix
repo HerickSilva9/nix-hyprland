@@ -165,6 +165,8 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
 
+  nix.settings.download-buffer-size = 134217728;  # 128 MB
+
   services.xserver.enable = true;
   programs.hyprland = {
     enable = true;
