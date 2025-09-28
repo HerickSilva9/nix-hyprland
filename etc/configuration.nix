@@ -85,6 +85,12 @@
   kitty
   tree
   neofetch
+  zip
+  unzip
+  python312
+  nix-output-monitor
+  cowsay
+  bat
 
   kdePackages.dolphin
 
@@ -114,7 +120,6 @@
   dracula-icon-theme
 
   # Virtualisation
-  docker
   docker-compose
   virt-manager
   libvirt
@@ -123,8 +128,9 @@
   steam-run
   dpkg
   remmina
+  distrobox
 
-  appimage-run
+  home-manager
 
   ];
 
@@ -192,7 +198,16 @@
   virtualisation = {
     docker.enable = true;
     libvirtd.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = false;
+    };
   };
   boot.kernelModules = ["kvm" "kvm_amd" "ip_tables" "iptable_nat"];
+  environment.localBinInPath = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
 }
