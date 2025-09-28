@@ -19,7 +19,17 @@
     shellAliases = {
       ll = "ls -l";
       ".." = "cd ..";
+      lst = "tree -L 1 --dirsfirst";
     };
   };
+
+  programs.kitty = {
+    enable = true;
+    extraConfig = ''
+      ${builtins.readFile ./kitty/kitty.conf}
+      ${builtins.readFile ./kitty/current-theme.conf}
+    '';
+  };
+
   home.stateVersion = "24.11";
 }
