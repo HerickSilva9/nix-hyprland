@@ -36,5 +36,14 @@
     '';
   };
 
+  programs.wofi = {
+    enable = true;
+    settings = {
+      allow_images = false;
+      gtk-dark = true;
+    };
+    style = builtins.readFile ./wofi/style.css;
+  };
+
   home.stateVersion = "25.05";
 }
