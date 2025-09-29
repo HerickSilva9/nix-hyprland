@@ -23,6 +23,11 @@
     };
   };
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    extraConfig = builtins.readFile ./hyprland/hyprland.conf;
+  };
+
   programs.kitty = {
     enable = true;
     extraConfig = ''
@@ -31,5 +36,5 @@
     '';
   };
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 }
