@@ -45,5 +45,11 @@
     style = builtins.readFile ./wofi/style.css;
   };
 
+  programs.waybar = {
+    enable = true;
+    style = builtins.readFile ./waybar/style.css;
+  };
+  xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
+
   home.stateVersion = "25.05";
 }
