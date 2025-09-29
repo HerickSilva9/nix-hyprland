@@ -91,6 +91,7 @@
   nix-output-monitor
   cowsay
   bat
+  htop
 
   kdePackages.dolphin
 
@@ -164,6 +165,11 @@
   # Drivers
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
+
+  swapDevices = [{
+    device = "/swapfile";
+    size = 8 * 1024;
+  }];
 
   nix.settings.download-buffer-size = 134217728;  # 128 MB
 
