@@ -55,15 +55,19 @@ button:hover {
 }
 
 #workspaces button {
+    margin: 0 4px;
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
+    font-weight: bold;
 }
 
 #workspaces button.active {
     color: #ffffff;
-    background-color: #5294e2;
+    background-color: #bd93f9;
     font-weight: bold;
+    border-radius: 8px;
+    padding: 4px 10px;
 }
 
 #workspaces button:hover {
