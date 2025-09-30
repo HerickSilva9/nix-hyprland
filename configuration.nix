@@ -87,7 +87,7 @@
   neofetch
   zip
   unzip
-  python312
+  python3 python3Packages.pip python3Packages.virtualenv uv
   nix-output-monitor
   cowsay
   bat
@@ -217,5 +217,11 @@
     enable = true;
     binfmt = true;
   };
+
+  programs.nix-ld.enable = true;
+  #programs.nix-ld.libraries = with pkgs; [
+  #  stdenv.cc.cc.lib
+  #  zlib # numpy
+  #];
 
 }
