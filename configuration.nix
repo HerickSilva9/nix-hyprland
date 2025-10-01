@@ -74,11 +74,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  
   # Bootloader
-  grub2
-  efibootmgr
-  os-prober
-
+  grub2 efibootmgr os-prober
+ 
   wget
   git
   curl
@@ -94,6 +93,12 @@
   htop
 
   kdePackages.dolphin
+  kdePackages.kde-cli-tools
+  xdg-utils
+  kdePackages.ark
+  kdePackages.kio 
+  kdePackages.kio-fuse 
+  kdePackages.kio-extras
 
   wayland
   uwsm
@@ -164,7 +169,15 @@
 
   # Drivers
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
+  hardware.nvidia = {
+    open = false;
+    nvidiaSettings = true;
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+  };
+
+  hardware.graphics.enable = true;
 
   swapDevices = [{
     device = "/swapfile";
@@ -211,7 +224,7 @@
       dockerCompat = false;
     };
   };
-  boot.kernelModules = ["kvm" "kvm_amd" "ip_tables" "iptable_nat"];
+  boot.kernelModules = ["kvm" "kvm_amd" "ip_tables" "iptable_nat" "nvidia" "nvidia_uvm" "nvidia_modeset" "nvidia_drm" ];
   environment.localBinInPath = true;
   programs.appimage = {
     enable = true;
@@ -219,9 +232,5 @@
   };
 
   programs.nix-ld.enable = true;
-  #programs.nix-ld.libraries = with pkgs; [
-  #  stdenv.cc.cc.lib
-  #  zlib # numpy
-  #];
-
+  
 }
