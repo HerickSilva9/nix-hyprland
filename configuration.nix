@@ -118,6 +118,7 @@
   polkit_gnome
 
   google-chrome
+  firefox
   vscode
   gnome-calculator
 
@@ -218,7 +219,11 @@
   # Virtualisation
   virtualisation = {
     docker.enable = true;
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+      onBoot = "start";
+      onShutdown = "shutdown";
+    };
     podman = {
       enable = true;
       dockerCompat = false;
