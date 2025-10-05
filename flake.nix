@@ -28,6 +28,27 @@
             }
           ];
         };
+
+        cosmic = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./configuration.nix
+            ./cosmic/packages-cosmic.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.herick = ./home.nix;
+                backupFileExtension = "backup";
+                extraSpecialArgs = { profile = "cosmic"; };
+              };
+              # Optionally, use home-manager.extraSpecialArgs to pass
+              # arguments to home.nix
+            }
+          ];
+        };
+
       };
     };
 }
