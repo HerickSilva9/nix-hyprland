@@ -36,4 +36,22 @@
   gnome-calculator
 
   ];
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
+
+  services.pipewire.enable = true;
+
+    # Environment variables
+  environment.variables = {
+    GTK_THEME = "Dracula";
+    ICON_THEME = "Dracula";
+  };
+
 }

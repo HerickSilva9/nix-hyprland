@@ -132,16 +132,6 @@
   nix.settings.download-buffer-size = 134217728;  # 128 MB
 
   services.xserver.enable = true;
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-  };
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-
-  services.gnome.gnome-keyring.enable = true;
-
-  services.pipewire.enable = true;
 
   # Fonts
   fonts.packages = with pkgs; [
@@ -153,12 +143,6 @@
     ubuntu_font_family
     font-awesome
   ];
-
-  # Environment variables
-  environment.variables = {
-    GTK_THEME = "Dracula";
-    ICON_THEME = "Dracula";
-  };
 
   # Virtualisation
   virtualisation = {
