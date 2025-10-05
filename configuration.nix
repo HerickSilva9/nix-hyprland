@@ -64,9 +64,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
-  # Bootloader
-  # grub2 efibootmgr os-prober
-
+  nano
   wget
   git
   curl
@@ -81,39 +79,9 @@
   bat
   htop
 
-  kdePackages.dolphin
-  kdePackages.kde-cli-tools
-  xdg-utils
-  kdePackages.ark
-  kdePackages.kio
-  kdePackages.kio-fuse
-  kdePackages.kio-extras
-
-  wayland
-  uwsm
-
-  pipewire
-  wireplumber
-  pavucontrol
-
-  waybar
-  wofi
-  swaybg
-  grim slurp swappy
-
-  gnome-keyring
-  libsecret
-  polkit
-  polkit_gnome
-
   google-chrome
   firefox
   vscode
-  gnome-calculator
-
-  # Themes
-  dracula-theme
-  dracula-icon-theme
 
   # Virtualisation
   docker-compose
@@ -121,9 +89,8 @@
   libvirt
   qemu
   freerdp
-  steam-run
-  dpkg
   remmina
+  steam-run
   distrobox
 
   home-manager

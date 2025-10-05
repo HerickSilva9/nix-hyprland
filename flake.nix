@@ -11,10 +11,11 @@
     { nixpkgs, home-manager, ... }:
     {
       nixosConfigurations = {
-        my-nixos = nixpkgs.lib.nixosSystem {
+        hyprland = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
+            ./hyprland/packages-hyprland.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
