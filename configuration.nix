@@ -12,19 +12,6 @@
       ./system/drivers-nvidia.nix
     ];
 
-  # Bootloader.
-  # systemd
-  # boot.loader.systemd-boot.enable = true;
-
-  # grub
-  # boot.loader.grub = {
-  #   enable = true;
-  #   efiSupport =  true;
-  #   useOSProber = true;
-  #   device = "nodev";
-  # };
-  # boot.loader.efi.canTouchEfiVariables = true;
-
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -169,18 +156,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
-  # Drivers
-  # services.xserver.videoDrivers = [ "nvidia" ];
-  # hardware.nvidia = {
-  #   open = false;
-  #   nvidiaSettings = true;
-  #   modesetting.enable = true;
-  #   powerManagement.enable = false;
-  #   powerManagement.finegrained = false;
-  # };
-
-  # hardware.graphics.enable = true;
 
   swapDevices = [{
     device = "/swapfile";
