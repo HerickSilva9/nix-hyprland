@@ -157,7 +157,7 @@
       dockerCompat = false;
     };
   };
-  boot.kernelModules = ["kvm" "kvm_amd" "ip_tables" "iptable_nat" "nvidia" "nvidia_uvm" "nvidia_modeset" "nvidia_drm" ];
+  boot.kernelModules = [ "kvm" "kvm_amd" "ip_tables" "iptable_nat" ];
   environment.localBinInPath = true;
   programs.appimage = {
     enable = true;
