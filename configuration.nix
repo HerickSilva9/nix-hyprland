@@ -7,7 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./system/hardware-configuration.nix
+      ./system/bootloader-grub.nix
+      ./system/drivers-nvidia.nix
     ];
 
   # Bootloader.
@@ -15,13 +17,13 @@
   # boot.loader.systemd-boot.enable = true;
 
   # grub
-  boot.loader.grub = {
-    enable = true;
-    efiSupport =  true;
-    useOSProber = true;
-    device = "nodev";
-  };
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.grub = {
+  #   enable = true;
+  #   efiSupport =  true;
+  #   useOSProber = true;
+  #   device = "nodev";
+  # };
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -74,10 +76,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  
+
   # Bootloader
-  grub2 efibootmgr os-prober
- 
+  # grub2 efibootmgr os-prober
+
   wget
   git
   curl
@@ -96,8 +98,8 @@
   kdePackages.kde-cli-tools
   xdg-utils
   kdePackages.ark
-  kdePackages.kio 
-  kdePackages.kio-fuse 
+  kdePackages.kio
+  kdePackages.kio-fuse
   kdePackages.kio-extras
 
   wayland
@@ -169,16 +171,16 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
   # Drivers
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    open = false;
-    nvidiaSettings = true;
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-  };
+  # services.xserver.videoDrivers = [ "nvidia" ];
+  # hardware.nvidia = {
+  #   open = false;
+  #   nvidiaSettings = true;
+  #   modesetting.enable = true;
+  #   powerManagement.enable = false;
+  #   powerManagement.finegrained = false;
+  # };
 
-  hardware.graphics.enable = true;
+  # hardware.graphics.enable = true;
 
   swapDevices = [{
     device = "/swapfile";
@@ -237,5 +239,5 @@
   };
 
   programs.nix-ld.enable = true;
-  
+
 }
