@@ -1,5 +1,9 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, profile, ... }:
 {
+
+  imports = [
+
+  ] ++ lib.optional (profile == "hyprland") ./hyprland/home-hyprland.nix;
 
   home.username = "herick";
   home.homeDirectory = "/home/herick";
@@ -20,7 +24,7 @@
         local BLUE="\[\e[34;1m\]"
         local YELLOW="\[\e[33;1m\]"
         local RESET="\[\e[0m\]"
-        
+
         # reset venv
         local VENV_PROMPT=""
 
@@ -34,7 +38,7 @@
           PS1="''${VENV_PROMPT}\[\e]0;\u@\h: \w\a\]\[\e[32;1m\]\u@\h:\w\$\[\e[0m\] "
         fi
       }
-      
+
       PROMPT_COMMAND=set_prompt
     export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
     '';
@@ -45,11 +49,6 @@
     };
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = builtins.readFile ./hyprland/hyprland.conf;
-  };
-
   programs.kitty = {
     enable = true;
     extraConfig = ''
@@ -57,21 +56,6 @@
       ${builtins.readFile ./kitty/current-theme.conf}
     '';
   };
-
-  programs.wofi = {
-    enable = true;
-    settings = {
-      allow_images = false;
-      gtk-dark = true;
-    };
-    style = builtins.readFile ./wofi/style.css;
-  };
-
-  programs.waybar = {
-    enable = true;
-    style = builtins.readFile ./waybar/style.css;
-  };
-  xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
 
   home.stateVersion = "25.05";
 }

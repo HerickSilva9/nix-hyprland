@@ -22,6 +22,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.herick = ./home.nix;
               home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = { profile = "hyprland"; };
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
             }
