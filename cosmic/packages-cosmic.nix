@@ -2,7 +2,9 @@
 
 {
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [
+    gnome-calculator
+  ];
 
   # Enable the COSMIC login manager
   services.displayManager.cosmic-greeter.enable = true;

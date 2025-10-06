@@ -78,6 +78,7 @@
   cowsay
   bat
   htop
+  btop
 
   google-chrome
   firefox
