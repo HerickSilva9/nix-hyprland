@@ -13,13 +13,13 @@
       allow_images = false;
       gtk-dark = true;
     };
-    style = builtins.readFile ../wofi/style.css;
+    style = builtins.readFile ./wofi/style.css;
   };
 
   programs.waybar = {
     enable = true;
-    style = builtins.readFile ../waybar/style.css;
+    style = builtins.readFile ./waybar/style.css;
   };
-  xdg.configFile."waybar/config.jsonc".source = ../waybar/config.jsonc;
+  xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
 
 }
