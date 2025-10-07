@@ -1,0 +1,3 @@
+[Default]
+save_dir=$HOME/imagens
+auto_save=true
