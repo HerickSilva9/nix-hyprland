@@ -17,6 +17,7 @@
   wofi
   swaybg
   grim slurp swappy
+  # hyprshot
 
   gnome-keyring
   libsecret
@@ -43,6 +44,8 @@
   kdePackages.qtsvg
   kdePackages.kservice
   shared-mime-info
+
+  swaynotificationcenter
 
   ];
 

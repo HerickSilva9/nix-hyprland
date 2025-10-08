@@ -22,4 +22,6 @@
   };
   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
 
+  xdg.configFile."swappy/config".source = ./swappy/config;
+
 }
