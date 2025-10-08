@@ -10,6 +10,8 @@
 
   home.packages = with pkgs; [ ];
 
+  home.file.".config/user-dirs.dirs".source = ./system/user-dirs.dirs;
+
   programs.bash = {
     enable = true;
     enableCompletion = true;

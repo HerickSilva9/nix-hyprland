@@ -93,6 +93,7 @@
   remmina
   steam-run
   distrobox
+  wineWowPackages.stable
 
   home-manager
 
