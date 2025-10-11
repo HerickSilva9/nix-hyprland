@@ -62,13 +62,15 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
-    
+
     # Personalizando para sua estrutura
     desktop = "${config.home.homeDirectory}/desktop";
     documents = "${config.home.homeDirectory}/documentos";
     download = "${config.home.homeDirectory}/downloads";
-    # music = "${config.home.homeDirectory}/musica";
+    music = "${config.home.homeDirectory}/music";
     pictures = "${config.home.homeDirectory}/imagens";
+    publicShare = "${config.home.homeDirectory}/public";
+    templates = "${config.home.homeDirectory}/modelos";
     videos = "${config.home.homeDirectory}/videos";
   };
 
