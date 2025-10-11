@@ -1,4 +1,4 @@
-{ lib, pkgs, profile, ... }:
+{ config, lib, pkgs, profile, ... }:
 {
 
   imports = [
@@ -57,6 +57,19 @@
       ${builtins.readFile ./kitty/kitty.conf}
       ${builtins.readFile ./kitty/current-theme.conf}
     '';
+  };
+
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    
+    # Personalizando para sua estrutura
+    desktop = "${config.home.homeDirectory}/desktop";
+    documents = "${config.home.homeDirectory}/documentos";
+    download = "${config.home.homeDirectory}/downloads";
+    # music = "${config.home.homeDirectory}/musica";
+    pictures = "${config.home.homeDirectory}/imagens";
+    videos = "${config.home.homeDirectory}/videos";
   };
 
   home.stateVersion = "25.05";
