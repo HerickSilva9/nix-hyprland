@@ -5,6 +5,32 @@
     vlc
    ];
 
+  xdg.mimeApps = {
+    enable = true;
+    
+    defaultApplications = {
+      # Terminal
+      "application/x-terminal-emulator" = "kitty.desktop";
+      "x-scheme-handler/terminal" = "kitty.desktop";
+      
+      # Navegador (Google Chrome)
+      "text/html" = "google-chrome.desktop";
+      "x-scheme-handler/http" = "google-chrome.desktop";
+      "x-scheme-handler/https" = "google-chrome.desktop";
+      "x-scheme-handler/about" = "google-chrome.desktop";
+      "x-scheme-handler/unknown" = "google-chrome.desktop";
+      
+      # Gerenciador de arquivos (Dolphin)
+      "inode/directory" = "org.kde.dolphin.desktop";
+      
+      # Editor de texto (Kate)
+      "text/plain" = "org.kde.kate.desktop";
+
+      # PDF
+      "application/pdf" = "google-chrome.desktp";
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = builtins.readFile ./hyprland.conf;
