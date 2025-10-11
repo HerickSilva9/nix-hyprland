@@ -1,6 +1,9 @@
 { lib, pkgs, ... }:
 {
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [
+    obs-studio
+    vlc
+   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
