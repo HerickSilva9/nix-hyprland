@@ -3,26 +3,27 @@
   home.packages = with pkgs; [
     obs-studio
     vlc
+    ags
    ];
 
   xdg.mimeApps = {
     enable = true;
-    
+
     defaultApplications = {
       # Terminal
       "application/x-terminal-emulator" = "kitty.desktop";
       "x-scheme-handler/terminal" = "kitty.desktop";
-      
+
       # Navegador (Google Chrome)
       "text/html" = "google-chrome.desktop";
       "x-scheme-handler/http" = "google-chrome.desktop";
       "x-scheme-handler/https" = "google-chrome.desktop";
       "x-scheme-handler/about" = "google-chrome.desktop";
       "x-scheme-handler/unknown" = "google-chrome.desktop";
-      
+
       # Gerenciador de arquivos (Dolphin)
       "inode/directory" = "org.kde.dolphin.desktop";
-      
+
       # Editor de texto (Kate)
       "text/plain" = "org.kde.kate.desktop";
 
@@ -52,5 +53,7 @@
   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
 
   xdg.configFile."swappy/config".source = ./swappy/config;
+
+  programs.hyprpanel.enable = true;
 
 }

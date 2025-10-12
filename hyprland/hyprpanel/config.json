@@ -1,0 +1,93 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "theme.font.size": "1.0rem",
+  "theme.font.weight": 600,
+  "theme.bar.location": "bottom",
+  "theme.bar.buttons.enableBorders": false,
+  "theme.font.name": "JetBrainsMono Nerd Font",
+  "theme.font.label": "JetBrainsMono Nerd Font",
+  "menus.clock.time.military": false,
+  "menus.clock.time.hideSeconds": false,
+  "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
+  "menus.dashboard.stats.enable_gpu": false,
+  "theme.bar.buttons.modules.cpuTemp.enableBorder": false,
+  "bar.launcher.autoDetectIcon": true,
+  "theme.bar.buttons.dashboard.enableBorder": false,
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.showWsIcons": false,
+  "bar.workspaces.showApplicationIcons": false,
+  "bar.workspaces.applicationIconOncePerWorkspace": false,
+  "bar.workspaces.monitorSpecific": true,
+  "bar.battery.label": false,
+  "theme.bar.buttons.systray.enableBorder": false,
+  "bar.clock.format": "%a %b %d  %I:%M %p",
+  "theme.bar.buttons.bluetooth.enableBorder": false,
+  "bar.bluetooth.label": false,
+  "bar.notifications.show_total": false,
+  "bar.windowtitle.custom_title": true,
+  "bar.windowtitle.class_name": true,
+  "bar.windowtitle.label": true,
+  "bar.windowtitle.icon": true,
+  "bar.windowtitle.truncation": true,
+  "theme.bar.enableShadow": false,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "menus.dashboard.recording.path": "$HOME/videos/screencasts",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "microsoft-edge-stable",
+  "theme.bar.transparent": true,
+  "theme.bar.buttons.modules.netstat.enableBorder": false,
+  "bar.customModules.netstat.dynamicIcon": false,
+  "bar.network.showWifiInfo": false,
+  "bar.customModules.netstat.round": true,
+  "theme.font.style": "normal"
+}
