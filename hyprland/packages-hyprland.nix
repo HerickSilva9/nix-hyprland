@@ -19,7 +19,6 @@
   grim slurp swappy
   # hyprshot
 
-  gnome-keyring
   libsecret
   polkit
   polkit_gnome
@@ -61,6 +60,10 @@
   services.displayManager.sddm.wayland.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
+
+  security.pam.services.sddm = {
+    enableGnomeKeyring = true;
+  };
 
   services.pipewire.enable = true;
 
