@@ -47,6 +47,9 @@
 
   swaynotificationcenter
 
+  papirus-icon-theme
+  adwaita-icon-theme
+
   ];
 
   programs.hyprland = {

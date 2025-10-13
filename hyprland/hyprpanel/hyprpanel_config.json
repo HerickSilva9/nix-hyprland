@@ -61,5 +61,7 @@
   "bar.scrollSpeed": 5,
   "menus.dashboard.recording.path": "$HOME/videos/screencasts",
   "menus.dashboard.controls.enabled": true,
-  "bar.launcher.autoDetectIcon": true
+  "bar.launcher.autoDetectIcon": true,
+  "theme.font.name": "JetBrainsMono Nerd Font",
+  "theme.font.label": "JetBrainsMono Nerd Font"
 }

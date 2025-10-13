@@ -144,6 +144,7 @@
     nerd-fonts.jetbrains-mono
     ubuntu_font_family
     font-awesome
+    material-design-icons
   ];
 
   # Virtualisation
