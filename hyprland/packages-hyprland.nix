@@ -44,6 +44,12 @@
   kdePackages.kservice
   shared-mime-info
 
+  # Pacotes para suporte a dispositivos
+  kdePackages.solid
+  kdePackages.kded
+  udisks2
+  udiskie
+
   swaynotificationcenter
 
   papirus-icon-theme
@@ -66,6 +72,9 @@
   };
 
   services.pipewire.enable = true;
+
+  # Habilita o udisks2 para gerenciamento de dispositivos
+  services.udisks2.enable = true;
 
   # Environment variables
   environment.variables = {
