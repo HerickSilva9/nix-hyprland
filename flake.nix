@@ -16,8 +16,8 @@
           system = "x86_64-linux";
           modules = [
             ./nixos/configuration.nix
-            ./nixos/system/drivers-nvidia.nix
-            ./nixos/system/hardware-configuration.nix
+            ./nixos/hosts/pc/drivers-nvidia.nix
+            ./nixos/hosts/pc/hardware-configuration.nix
             ./hyprland/packages-hyprland.nix
             home-manager.nixosModules.home-manager
             {
@@ -34,8 +34,8 @@
           system = "x86_64-linux";
           modules = [
             ./nixos/configuration.nix
-            ./nixos/system/drivers-intel.nix
-            ./nixos/system/hardware-configuration-laptop.nix
+            ./nixos/hosts/laptop/drivers-intel.nix
+            ./nixos/hosts/laptop/hardware-configuration.nix
             ./hyprland/packages-hyprland.nix
             ./laptop/packages-laptop.nix
             home-manager.nixosModules.home-manager
