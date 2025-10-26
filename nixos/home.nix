@@ -53,8 +53,8 @@
   programs.kitty = {
     enable = true;
     extraConfig = ''
-      ${builtins.readFile ../pkgs/kitty/kitty.conf}
-      ${builtins.readFile ../pkgs/kitty/current-theme.conf}
+      ${builtins.readFile ./pkgs/kitty/kitty.conf}
+      ${builtins.readFile ./pkgs/kitty/current-theme.conf}
     '';
   };
 
