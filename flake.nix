@@ -18,7 +18,7 @@
             ./nixos/configuration.nix
             ./nixos/hosts/pc/drivers-nvidia.nix
             ./nixos/hosts/pc/hardware-configuration.nix
-            ./hyprland/packages-hyprland.nix
+            ./nixos/desktop/hyprland/packages-hyprland.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -36,7 +36,7 @@
             ./nixos/configuration.nix
             ./nixos/hosts/laptop/drivers-intel.nix
             ./nixos/hosts/laptop/hardware-configuration.nix
-            ./hyprland/packages-hyprland.nix
+            ./nixos/desktop/hyprland/packages-hyprland.nix
             ./nixos/hosts/laptop/packages-laptop.nix
             home-manager.nixosModules.home-manager
             {

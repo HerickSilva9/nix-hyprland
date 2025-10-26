@@ -3,7 +3,7 @@
 
   imports = [
 
-  ] ++ lib.optional (profile == "hyprland") ../hyprland/home-hyprland.nix;
+  ] ++ lib.optional (profile == "hyprland") ./desktop/hyprland/home-hyprland.nix;
 
   home.username = "herick";
   home.homeDirectory = "/home/herick";
