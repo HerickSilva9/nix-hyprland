@@ -1,6 +1,10 @@
 # NixOS
 
-To install GRUB on NixOS, copy the `configuration.nix` file to `/etc/nixos/` and run the command below during the first installation
+To install GRUB on NixOS, copy the `hardware-configuration.nix` file to the `host` directory and run the command below during the first installation:
 ```bash
-sudo nixos-rebuild switch --install-bootloader
+sudo nixos-rebuild switch --flake {path-flake}#{hostname} --install-bootloader
 ```
+
+## Hyprpanel
+
+Import the Hyprpanel backup file to apply the configurations.
