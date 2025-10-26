@@ -13,11 +13,9 @@
   wireplumber
   pavucontrol
 
-  waybar
   wofi
   swaybg
   grim slurp swappy
-  # hyprshot
 
   libsecret
   polkit
