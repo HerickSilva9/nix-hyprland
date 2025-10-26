@@ -74,5 +74,15 @@
     videos = "${config.home.homeDirectory}/videos";
   };
 
+  home.file.".wallpapers/DraculaWallpapers" = {
+    source = pkgs.fetchFromGitHub {
+      owner = "dracula";
+      repo = "wallpaper";
+      rev = "master";
+      sha256 = "sha256-P0MfGkVap8wDd6eSMwmLhvQ4/7Z+pNmgY7O+qt9C1bg";
+    };
+  recursive = true;
+  };
+
   home.stateVersion = "25.05";
 }
