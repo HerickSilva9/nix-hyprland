@@ -46,7 +46,8 @@
       ll = "ls -l";
       ".." = "cd ..";
       lst = "tree -L 1 --dirsfirst";
-      srhyprland = "sudo nixos-rebuild switch --flake .#hyprland";
+      srpc = "sudo nixos-rebuild switch --flake .#pc";
+      srlaptop = "sudo nixos-rebuild switch --flake .#laptop";
     };
   };
 

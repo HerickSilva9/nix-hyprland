@@ -12,7 +12,7 @@
     {
       nixosConfigurations = {
 
-        hyprland = nixpkgs.lib.nixosSystem {
+        pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./nixos/configuration.nix
@@ -25,7 +25,10 @@
               home-manager.useUserPackages = true;
               home-manager.users.herick = ./nixos/home.nix;
               home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = { profile = "hyprland"; };
+              home-manager.extraSpecialArgs = {
+                profile = "hyprland";
+                hostname = "pc";
+                };
             }
           ];
         };
@@ -44,7 +47,10 @@
               home-manager.useUserPackages = true;
               home-manager.users.herick = ./nixos/home.nix;
               home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = { profile = "hyprland"; };
+              home-manager.extraSpecialArgs = {
+                profile = "hyprland";
+                hostname = "laptop";
+                };
             }
           ];
         };

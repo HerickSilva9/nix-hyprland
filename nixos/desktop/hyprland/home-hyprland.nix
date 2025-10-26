@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, hostname, ... }:
 {
   home.packages = with pkgs; [
     obs-studio
@@ -34,7 +34,10 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    extraConfig = builtins.readFile ./hyprland.conf;
+    extraConfig = ''
+      ${builtins.readFile ./hyprland/hyprland.conf}
+      ${builtins.readFile ./hyprland/monitors/${hostname}.conf}
+    '';
   };
 
   programs.wofi = {
