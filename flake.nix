@@ -16,9 +16,9 @@
           system = "x86_64-linux";
           modules = [
             ./nixos/configuration.nix
+            ./nixos/system/drivers-nvidia.nix
+            ./nixos/system/hardware-configuration.nix
             ./hyprland/packages-hyprland.nix
-            ./system/drivers-nvidia.nix
-            ./system/hardware-configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -34,9 +34,9 @@
           system = "x86_64-linux";
           modules = [
             ./nixos/configuration.nix
+            ./nixos/system/drivers-intel.nix
+            ./nixos/system/hardware-configuration-laptop.nix
             ./hyprland/packages-hyprland.nix
-            ./system/drivers-intel.nix
-            ./system/hardware-configuration-laptop.nix
             ./laptop/packages-laptop.nix
             home-manager.nixosModules.home-manager
             {
