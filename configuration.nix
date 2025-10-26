@@ -7,9 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./system/hardware-configuration.nix
       ./system/bootloader-grub.nix
-      ./system/drivers-nvidia.nix
     ];
 
   networking.hostName = "nixos"; # Define your hostname.
