@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, hostname, ... }:
 {
   home.packages = with pkgs; [
     obs-studio
@@ -34,7 +34,10 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    extraConfig = builtins.readFile ./hyprland.conf;
+    extraConfig = ''
+      ${builtins.readFile ./hyprland/hyprland.conf}
+      ${builtins.readFile ./hyprland/monitors/${hostname}.conf}
+    '';
   };
 
   programs.wofi = {
@@ -45,12 +48,6 @@
     };
     style = builtins.readFile ./wofi/style.css;
   };
-
-  programs.waybar = {
-    enable = true;
-    style = builtins.readFile ./waybar/style.css;
-  };
-  xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
 
   xdg.configFile."swappy/config".source = ./swappy/config;
 

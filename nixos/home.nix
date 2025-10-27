@@ -3,14 +3,12 @@
 
   imports = [
 
-  ] ++ lib.optional (profile == "hyprland") ./hyprland/home-hyprland.nix;
+  ] ++ lib.optional (profile == "hyprland") ./desktop/hyprland/home-hyprland.nix;
 
   home.username = "herick";
   home.homeDirectory = "/home/herick";
 
   home.packages = with pkgs; [ ];
-
-  # home.file.".config/user-dirs.dirs".source = ./system/user-dirs.dirs;
 
   programs.bash = {
     enable = true;
@@ -48,15 +46,16 @@
       ll = "ls -l";
       ".." = "cd ..";
       lst = "tree -L 1 --dirsfirst";
-      srhyprland = "sudo nixos-rebuild switch --flake .#hyprland";
+      srpc = "sudo nixos-rebuild switch --flake .#pc";
+      srlaptop = "sudo nixos-rebuild switch --flake .#laptop";
     };
   };
 
   programs.kitty = {
     enable = true;
     extraConfig = ''
-      ${builtins.readFile ./kitty/kitty.conf}
-      ${builtins.readFile ./kitty/current-theme.conf}
+      ${builtins.readFile ./pkgs/kitty/kitty.conf}
+      ${builtins.readFile ./pkgs/kitty/current-theme.conf}
     '';
   };
 
@@ -73,6 +72,16 @@
     publicShare = "${config.home.homeDirectory}/public";
     templates = "${config.home.homeDirectory}/modelos";
     videos = "${config.home.homeDirectory}/videos";
+  };
+
+  home.file.".wallpapers/DraculaWallpapers" = {
+    source = pkgs.fetchFromGitHub {
+      owner = "dracula";
+      repo = "wallpaper";
+      rev = "master";
+      sha256 = "sha256-P0MfGkVap8wDd6eSMwmLhvQ4/7Z+pNmgY7O+qt9C1bg";
+    };
+  recursive = true;
   };
 
   home.stateVersion = "25.05";

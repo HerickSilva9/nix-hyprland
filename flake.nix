@@ -11,60 +11,46 @@
     { nixpkgs, home-manager, ... }:
     {
       nixosConfigurations = {
-        hyprland = nixpkgs.lib.nixosSystem {
+
+        pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./configuration.nix
-            ./hyprland/packages-hyprland.nix
+            ./nixos/configuration.nix
+            ./nixos/hosts/pc/drivers-nvidia.nix
+            ./nixos/hosts/pc/hardware-configuration.nix
+            ./nixos/desktop/hyprland/packages-hyprland.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.herick = ./home.nix;
+              home-manager.users.herick = ./nixos/home.nix;
               home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = { profile = "hyprland"; };
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
+              home-manager.extraSpecialArgs = {
+                profile = "hyprland";
+                hostname = "pc";
+                };
             }
           ];
         };
 
-        cosmic = nixpkgs.lib.nixosSystem {
+        laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./configuration.nix
-            ./cosmic/packages-cosmic.nix
+            ./nixos/configuration.nix
+            ./nixos/hosts/laptop/drivers-intel.nix
+            ./nixos/hosts/laptop/hardware-configuration.nix
+            ./nixos/desktop/hyprland/packages-hyprland.nix
+            ./nixos/hosts/laptop/packages-laptop.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.herick = ./home.nix;
-                backupFileExtension = "backup";
-                extraSpecialArgs = { profile = "cosmic"; };
-              };
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
-            }
-          ];
-        };
-
-        gnome = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./configuration.nix
-            ./gnome/configuration-gnome.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.herick = ./home.nix;
-                backupFileExtension = "backup";
-                extraSpecialArgs = { profile = "gnome"; };
-              };
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.herick = ./nixos/home.nix;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = {
+                profile = "hyprland";
+                hostname = "laptop";
+                };
             }
           ];
         };
