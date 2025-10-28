@@ -77,6 +77,7 @@
   bat
   htop
   btop
+  vim
 
   google-chrome
   firefox
