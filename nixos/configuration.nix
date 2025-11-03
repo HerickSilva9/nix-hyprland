@@ -96,6 +96,8 @@
 
   home-manager
 
+  seafile-client
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
