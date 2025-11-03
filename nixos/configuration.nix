@@ -100,6 +100,7 @@
 
   ] ++ [
   pkgs-unstable.rclone
+  pkgs-unstable.libreoffice-fresh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -4,7 +4,7 @@
 
   environment.systemPackages = with pkgs; [
 
-  # kdePackages.kde-cli-tools xdg-utils kdePackages.ark
+  # kdePackages.kde-cli-tools xdg-utils
 
   wayland
   uwsm
@@ -40,6 +40,7 @@
   kdePackages.breeze-icons
   kdePackages.qtsvg
   kdePackages.kservice
+  kdePackages.ark
   shared-mime-info
 
   # Pacotes para suporte a dispositivos
