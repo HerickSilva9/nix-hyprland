@@ -54,6 +54,9 @@
   papirus-icon-theme
   adwaita-icon-theme
 
+  yazi
+  superfile
+
   ];
 
   programs.hyprland = {
