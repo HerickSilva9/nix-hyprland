@@ -26,7 +26,7 @@
             ./configuration.nix
             ./hosts/pc/drivers-nvidia.nix
             ./hosts/pc/hardware-configuration.nix
-            ./nixos/desktop/hyprland/packages-hyprland.nix
+            ./packages-hyprland.nix
 
             # Disponibilizar pkgs-unstable para o sistema
             {
@@ -54,7 +54,7 @@
             ./configuration.nix
             ./hosts/laptop/drivers-intel.nix
             ./hosts/laptop/hardware-configuration.nix
-            ./nixos/desktop/hyprland/packages-hyprland.nix
+            ./packages-hyprland.nix
             ./hosts/laptop/packages-laptop.nix
 
             # Disponibilizar pkgs-unstable para o sistema

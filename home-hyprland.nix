@@ -46,8 +46,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
-      ${builtins.readFile ./hyprland/hyprland.conf}
-      ${builtins.readFile ./hyprland/monitors/${hostname}.conf}
+      ${builtins.readFile ./nixos/desktop/hyprland/hyprland/hyprland.conf}
+      ${builtins.readFile ./nixos/desktop/hyprland/hyprland/monitors/${hostname}.conf}
     '';
     systemd.variables = ["--all"];
   };
@@ -58,10 +58,10 @@
       allow_images = false;
       gtk-dark = true;
     };
-    style = builtins.readFile ./wofi/style.css;
+    style = builtins.readFile ./nixos/desktop/hyprland/wofi/style.css;
   };
 
-  xdg.configFile."swappy/config".source = ./swappy/config;
+  xdg.configFile."swappy/config".source = ./nixos/desktop/hyprland/swappy/config;
 
   programs.hyprpanel.enable = true;
 
