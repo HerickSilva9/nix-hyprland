@@ -25,11 +25,22 @@
       "inode/directory" = "org.kde.dolphin.desktop";
 
       # Editor de texto (Kate)
-      "text/plain" = "org.kde.kate.desktop";
+      "text/plain" = "nvim.desktop";
+      "text/x-csrc" = "nvim.desktop";
+      "text/x-c++src" = "nvim.desktop";
+      "text/x-python" = "nvim.desktop";
+      "text/markdown" = "nvim.desktop";
 
       # PDF
-      "application/pdf" = "google-chrome.desktp";
+      "application/pdf" = "google-chrome.desktop";
     };
+  };
+
+  home.sessionVariables = {
+    TERMINAL = "kitty";
+    TERM = "kitty";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
   wayland.windowManager.hyprland = {

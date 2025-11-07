@@ -41,6 +41,7 @@
 
       PROMPT_COMMAND=set_prompt
     export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+    export TERM="kitty"
     '';
     shellAliases = {
       ll = "ls -l";
@@ -48,6 +49,7 @@
       lst = "tree -L 1 --dirsfirst";
       srpc = "sudo nixos-rebuild switch --flake .#pc";
       srlaptop = "sudo nixos-rebuild switch --flake .#laptop";
+      y = "yazi";
     };
   };
 
