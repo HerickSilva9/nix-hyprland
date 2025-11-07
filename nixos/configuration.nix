@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./system/bootloader-grub.nix
+      ../core/bootloader-grub.nix
     ];
 
   networking.hostName = "nixos"; # Define your hostname.
