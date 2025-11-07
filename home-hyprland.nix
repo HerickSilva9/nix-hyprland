@@ -46,8 +46,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
-      ${builtins.readFile ./nixos/desktop/hyprland/hyprland/hyprland.conf}
-      ${builtins.readFile ./nixos/desktop/hyprland/hyprland/monitors/${hostname}.conf}
+      ${builtins.readFile ./hyprland/hyprland.conf}
+      ${builtins.readFile ./hyprland/monitors/${hostname}.conf}
     '';
     systemd.variables = ["--all"];
   };
