@@ -81,7 +81,7 @@
   google-chrome
   firefox
   vscode
-  neovim gcc
+  neovim vim gcc xclip
 
   # Virtualisation
   docker-compose
