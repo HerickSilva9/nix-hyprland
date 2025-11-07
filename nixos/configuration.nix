@@ -77,11 +77,11 @@
   bat
   htop
   btop
-  vim
 
   google-chrome
   firefox
   vscode
+  neovim gcc
 
   # Virtualisation
   docker-compose
@@ -169,6 +169,16 @@
   programs.appimage = {
     enable = true;
     binfmt = true;
+  };
+
+  services.flatpak.enable = true;
+
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
   };
 
   programs.nix-ld.enable = true;
