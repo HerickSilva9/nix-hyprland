@@ -57,7 +57,7 @@
   yazi
   superfile
 
-  nautilus gnome.gvfs          # opcional
+  nautilus gnome.gvfs sushi file-roller
   xdg-desktop-portal-gtk
 
   ];
