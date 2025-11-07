@@ -49,6 +49,7 @@
       ${builtins.readFile ./hyprland/hyprland.conf}
       ${builtins.readFile ./hyprland/monitors/${hostname}.conf}
     '';
+    systemd.variables = ["--all"];
   };
 
   programs.wofi = {

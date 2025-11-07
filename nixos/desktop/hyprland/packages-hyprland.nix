@@ -57,6 +57,9 @@
   yazi
   superfile
 
+  nautilus gnome.gvfs          # opcional
+  xdg-desktop-portal-gtk
+
   ];
 
   programs.hyprland = {
