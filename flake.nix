@@ -23,7 +23,7 @@
         pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./nixos/configuration.nix
+            ./configuration.nix
             ./hosts/pc/drivers-nvidia.nix
             ./hosts/pc/hardware-configuration.nix
             ./nixos/desktop/hyprland/packages-hyprland.nix
@@ -37,7 +37,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.herick = ./nixos/home.nix;
+              home-manager.users.herick = ./home.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 profile = "hyprland";
@@ -51,7 +51,7 @@
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./nixos/configuration.nix
+            ./configuration.nix
             ./hosts/laptop/drivers-intel.nix
             ./hosts/laptop/hardware-configuration.nix
             ./nixos/desktop/hyprland/packages-hyprland.nix
@@ -66,7 +66,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.herick = ./nixos/home.nix;
+              home-manager.users.herick = ./home.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 profile = "hyprland";

@@ -3,7 +3,7 @@
 
   imports = [
 
-  ] ++ lib.optional (profile == "hyprland") ./desktop/hyprland/home-hyprland.nix;
+  ] ++ lib.optional (profile == "hyprland") ./nixos/desktop/hyprland/home-hyprland.nix;
 
   home.username = "herick";
   home.homeDirectory = "/home/herick";
@@ -56,8 +56,8 @@
   programs.kitty = {
     enable = true;
     extraConfig = ''
-      ${builtins.readFile ./pkgs/kitty/kitty.conf}
-      ${builtins.readFile ./pkgs/kitty/current-theme.conf}
+      ${builtins.readFile ./nixos/pkgs/kitty/kitty.conf}
+      ${builtins.readFile ./nixos/pkgs/kitty/current-theme.conf}
     '';
   };
 
