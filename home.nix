@@ -3,7 +3,7 @@
 
   imports = [
 
-  ] ++ lib.optional (profile == "hyprland") ./home-hyprland.nix;
+  ] ++ lib.optional (profile == "hyprland") ./modules/home-hyprland.nix;
 
   home.username = "herick";
   home.homeDirectory = "/home/herick";
