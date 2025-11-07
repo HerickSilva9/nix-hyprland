@@ -58,10 +58,10 @@
       allow_images = false;
       gtk-dark = true;
     };
-    style = builtins.readFile ./nixos/desktop/hyprland/wofi/style.css;
+    style = builtins.readFile ./pkgs/wofi/style.css;
   };
 
-  xdg.configFile."swappy/config".source = ./nixos/desktop/hyprland/swappy/config;
+  xdg.configFile."swappy/config".source = ./pkgs/swappy/config;
 
   programs.hyprpanel.enable = true;
 
