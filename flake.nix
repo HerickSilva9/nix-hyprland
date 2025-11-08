@@ -23,10 +23,9 @@
         pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./nixos/configuration.nix
-            ./nixos/hosts/pc/drivers-nvidia.nix
-            ./nixos/hosts/pc/hardware-configuration.nix
-            ./nixos/desktop/hyprland/packages-hyprland.nix
+            ./configuration.nix
+            ./hosts/pc/drivers-nvidia.nix
+            ./hosts/pc/hardware-configuration.nix
 
             # Disponibilizar pkgs-unstable para o sistema
             {
@@ -37,7 +36,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.herick = ./nixos/home.nix;
+              home-manager.users.herick = ./home.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 profile = "hyprland";
@@ -51,11 +50,10 @@
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./nixos/configuration.nix
-            ./nixos/hosts/laptop/drivers-intel.nix
-            ./nixos/hosts/laptop/hardware-configuration.nix
-            ./nixos/desktop/hyprland/packages-hyprland.nix
-            ./nixos/hosts/laptop/packages-laptop.nix
+            ./configuration.nix
+            ./hosts/laptop/drivers-intel.nix
+            ./hosts/laptop/hardware-configuration.nix
+            ./hosts/laptop/packages-laptop.nix
 
             # Disponibilizar pkgs-unstable para o sistema
             {
@@ -66,7 +64,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.herick = ./nixos/home.nix;
+              home-manager.users.herick = ./home.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 profile = "hyprland";
