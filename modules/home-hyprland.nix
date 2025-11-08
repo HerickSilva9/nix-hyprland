@@ -22,7 +22,7 @@
       "x-scheme-handler/unknown" = "google-chrome.desktop";
 
       # Gerenciador de arquivos (Dolphin)
-      "inode/directory" = "org.kde.dolphin.desktop";
+      "inode/directory" = "org.gnome.Nautilus.desktop";
 
       # Editor de texto (Kate)
       "text/plain" = "nvim.desktop";
