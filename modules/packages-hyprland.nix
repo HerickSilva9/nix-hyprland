@@ -4,8 +4,6 @@
 
   environment.systemPackages = with pkgs; [
 
-  # kdePackages.kde-cli-tools xdg-utils
-
   wayland
   uwsm
 
@@ -26,26 +24,31 @@
 
   gnome-calculator
 
-  kdePackages.kate
+
+  ###### KDE
+  # kdePackages.kde-cli-tools xdg-utils
+  # kdePackages.kate
   #Dolphin and required dependencies
-  kdePackages.dolphin
-  kdePackages.kio
-  kdePackages.kdf
-  kdePackages.kio-fuse
-  kdePackages.kio-extras
-  kdePackages.kio-admin
-  kdePackages.qtwayland
-  kdePackages.plasma-integration
-  kdePackages.kdegraphics-thumbnailers
+  # kdePackages.dolphin
+  # kdePackages.kio
+  # kdePackages.kdf
+  # kdePackages.kio-fuse
+  # kdePackages.kio-extras
+  # kdePackages.kio-admin
+  # kdePackages.plasma-integration
+  # kdePackages.kdegraphics-thumbnailers
+  # kdePackages.kservice
+  # kdePackages.ark
+
   kdePackages.breeze-icons
+  kdePackages.qtwayland
   kdePackages.qtsvg
-  kdePackages.kservice
-  kdePackages.ark
   shared-mime-info
 
   # Pacotes para suporte a dispositivos
-  kdePackages.solid
-  kdePackages.kded
+  # kdePackages.solid
+  # kdePackages.kded
+
   udisks2
   udiskie
 
@@ -92,6 +95,6 @@
 
   # Fix for empty "Open With" menu in Dolphin when running under Hyprland
   # This copies the plasma-applications.menu file from plasma-workspace to /etc/xdg/menus/applications.menu
-  environment.etc."/xdg/menus/applications.menu".text = builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+  # environment.etc."/xdg/menus/applications.menu".text = builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
 }
