@@ -99,9 +99,11 @@
 
   seafile-client
 
+  discord
+
   ] ++ [
   pkgs-unstable.rclone
- # pkgs-unstable.libreoffice-fresh
+  pkgs-unstable.libreoffice-fresh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
