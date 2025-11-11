@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./core/bootloader-grub.nix
       ./modules/packages-hyprland.nix
+      ./modules/services.nix
     ];
 
   networking.hostName = "nixos"; # Define your hostname.
