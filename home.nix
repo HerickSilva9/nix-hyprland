@@ -50,6 +50,8 @@
       srpc = "sudo nixos-rebuild switch --flake .#pc";
       srlaptop = "sudo nixos-rebuild switch --flake .#laptop";
       y = "yazi";
+      windows-up = "cd $HOME/windows && docker compose up -d";
+      windows-down = "cd $HOME/windows && docker compose down";
     };
   };
 
