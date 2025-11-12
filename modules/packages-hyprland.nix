@@ -7,8 +7,6 @@
   wayland
   uwsm
 
-  pipewire
-  wireplumber
   pavucontrol
 
   wofi
@@ -68,7 +66,17 @@
   programs.hyprland = {
     enable = true;
     withUWSM = true;
+    xwayland.enable = true;
   };
+
+    # Habilitar PipeWire e WirePlumber
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+  services.pipewire.wireplumber.enable = true;
 
   security.pam.services.sddm = {
     enableGnomeKeyring = true;
