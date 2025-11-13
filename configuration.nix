@@ -164,10 +164,6 @@
       onBoot = "start";
       onShutdown = "shutdown";
     };
-    podman = {
-      enable = true;
-      dockerCompat = false;
-    };
   };
   boot.kernelModules = [ "kvm" "kvm_amd" "ip_tables" "iptable_nat" ];
   environment.localBinInPath = true;
