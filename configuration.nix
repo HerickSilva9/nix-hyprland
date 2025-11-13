@@ -10,6 +10,7 @@
       ./core/bootloader-grub.nix
       ./modules/packages-hyprland.nix
       ./modules/services.nix
+      ./audio
     ];
 
   networking.hostName = "nixos"; # Define your hostname.
