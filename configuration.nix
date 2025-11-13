@@ -80,9 +80,6 @@
   htop
   btop
 
-  google-chrome
-  firefox
-  vscode
   neovim vim gcc xclip
 
   # Virtualisation
@@ -105,6 +102,10 @@
   ] ++ [
   pkgs-unstable.rclone
   pkgs-unstable.libreoffice-fresh
+  pkgs-unstable.google-chrome
+  pkgs-unstable.firefox
+  pkgs-unstable.vscode
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
