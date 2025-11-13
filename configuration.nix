@@ -11,6 +11,7 @@
       ./modules/packages-hyprland.nix
       ./modules/services.nix
       ./audio
+      ./virtualisation
     ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -54,7 +55,7 @@
   users.users.herick = {
     isNormalUser = true;
     description = "Herick";
-    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "qemu-libvirtd" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "qemu-libvirtd" "libvirtd"];
     packages = with pkgs; [];
   };
 
@@ -84,7 +85,6 @@
   neovim vim gcc xclip
 
   # Virtualisation
-  docker-compose
   virt-manager
   libvirt
   qemu
@@ -159,7 +159,6 @@
 
   # Virtualisation
   virtualisation = {
-    docker.enable = true;
     libvirtd = {
       enable = true;
       onBoot = "start";
