@@ -22,7 +22,6 @@
 
   gnome-calculator
 
-
   ###### KDE
   # kdePackages.kde-cli-tools xdg-utils
   # kdePackages.kate
@@ -62,12 +61,6 @@
   xdg-desktop-portal-gtk
 
   ];
-
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
 
   security.pam.services.sddm = {
     enableGnomeKeyring = true;

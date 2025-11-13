@@ -11,6 +11,7 @@
       ./modules/packages-hyprland.nix
       ./modules/services.nix
       ./audio
+      ./desktop/hyprland
       ./virtualisation
     ];
 
