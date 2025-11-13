@@ -14,4 +14,6 @@
     extraGroups = [ "docker" ];
   };
 
+  boot.kernelModules = [ "ip_tables" "iptable_nat" ];
+
 }

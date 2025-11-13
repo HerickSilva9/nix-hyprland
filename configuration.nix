@@ -55,7 +55,8 @@
   users.users.herick = {
     isNormalUser = true;
     description = "Herick";
-    extraGroups = [ "networkmanager" "wheel" "kvm" "qemu-libvirtd" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" ];
+    # extraGroups = [ "networkmanager" "wheel" "kvm" "qemu-libvirtd" "libvirtd"];
     packages = with pkgs; [];
   };
 
@@ -85,9 +86,9 @@
   neovim vim gcc xclip
 
   # Virtualisation
-  virt-manager
-  libvirt
-  qemu
+  # virt-manager
+  # libvirt
+  # qemu
   freerdp
   remmina
   steam-run
@@ -158,14 +159,14 @@
   ];
 
   # Virtualisation
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-      onBoot = "start";
-      onShutdown = "shutdown";
-    };
-  };
-  boot.kernelModules = [ "kvm" "kvm_amd" "ip_tables" "iptable_nat" ];
+  # virtualisation = {
+  #   libvirtd = {
+  #     enable = true;
+  #     onBoot = "start";
+  #     onShutdown = "shutdown";
+  #   };
+  # };
+  # boot.kernelModules = [ "kvm" "kvm_amd" ];
   environment.localBinInPath = true;
   programs.appimage = {
     enable = true;
