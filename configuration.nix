@@ -86,6 +86,8 @@
 
   neovim vim gcc xclip
 
+  rustup
+
   # Virtualisation
   # virt-manager
   # libvirt
