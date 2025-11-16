@@ -84,7 +84,7 @@
   htop
   btop
 
-  neovim vim gcc xclip
+  neovim vim gcc wl-clipboard
 
   rustup
 
