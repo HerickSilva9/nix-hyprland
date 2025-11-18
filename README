@@ -8,3 +8,21 @@ sudo nixos-rebuild switch --flake {path-flake}#{hostname} --install-bootloader
 ## Hyprpanel
 
 Import the Hyprpanel backup file to apply the configurations.
+
+## Update
+```
+nix flake update
+sudo nixos-rebuild switch --flake .#hostname
+```
+
+### pc
+```
+nix flake update
+sudo nixos-rebuild switch --flake .#pc
+```
+
+### laptop
+```
+nix flake update
+sudo nixos-rebuild switch --flake .#laptop
+```
