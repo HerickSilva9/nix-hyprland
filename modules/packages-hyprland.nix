@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
 
@@ -60,6 +60,8 @@
   nautilus gnome.gvfs sushi file-roller
   xdg-desktop-portal-gtk
 
+  ] ++ [
+  pkgs-unstable.zed-editor
   ];
 
   security.pam.services.sddm = {
