@@ -96,7 +96,6 @@
   remmina
   steam-run
   distrobox
-#  wineWowPackages.stable
 
   home-manager
 
@@ -161,15 +160,6 @@
     material-design-icons
   ];
 
-  # Virtualisation
-  # virtualisation = {
-  #   libvirtd = {
-  #     enable = true;
-  #     onBoot = "start";
-  #     onShutdown = "shutdown";
-  #   };
-  # };
-  # boot.kernelModules = [ "kvm" "kvm_amd" ];
   environment.localBinInPath = true;
   programs.appimage = {
     enable = true;
@@ -189,30 +179,6 @@
   programs.nix-ld.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-    # Copia sua configuração do rclone para o sistema
-#  environment.etc."rclone.conf" = {
-#    source = lib.mkIf (builtins.pathExists "/home/herick/.config/rclone/rclone.conf") "/home/herick/.config/rclone/rclone.conf";
-#    mode = "0600";  # Apenas root pode ler (segurança)
-#  };
-
-#  # Monta o OneDrive automaticamente
-#  fileSystems."/home/herick/onedrive" = {
-#    device = "onedrive:";
-#    fsType = "rclone";
-#    options = [
-#      "nodev"
-#      "nofail"
-#      "allow_other"
-#      "args2env"
-#      "config=/etc/rclone.conf"
-#      "cache-dir=/home/herick/.cache/rclone"
-#      "vfs-cache-mode=writes"
-#      "vfs-cache-max-age=1h"
-#      "uid=1000"  # Seu UID (confirme com: id -u)
-#      "gid=100"   # Seu GID (confirme com: id -g)
-#    ];
-#  };
 
   xdg.terminal-exec = {
       enable = true;
