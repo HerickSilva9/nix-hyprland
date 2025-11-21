@@ -68,49 +68,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
-  nano
-  wget
-  git
-  curl
-  kitty
-  tree
-  neofetch
-  zip
-  unzip
-  python3 python3Packages.pip python3Packages.virtualenv uv
-  nix-output-monitor
-  cowsay
-  bat
-  htop
-  btop
-
-  neovim vim gcc wl-clipboard
-
-  rustup
-
-  # Virtualisation
-  # virt-manager
-  # libvirt
-  # qemu
-  freerdp
-  remmina
-  steam-run
-  distrobox
-
-  home-manager
-
-  seafile-client
-
-  discord
-
-  ] ++ [
-  pkgs-unstable.rclone
-  pkgs-unstable.libreoffice-fresh
-  pkgs-unstable.google-chrome
-  pkgs-unstable.firefox
-  pkgs-unstable.vscode
-
-  ];
+  ]
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -138,56 +96,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
-  swapDevices = [{
-    device = "/swapfile";
-    size = 8 * 1024;
-  }];
-
-  nix.settings.download-buffer-size = 134217728;  # 128 MB
-
-  services.xserver.enable = true;
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-color-emoji
-    roboto
-    open-sans
-    nerd-fonts.jetbrains-mono
-    ubuntu_font_family
-    font-awesome
-    material-design-icons
-  ];
-
-  environment.localBinInPath = true;
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
-
-  services.flatpak.enable = true;
-
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
-  programs.nix-ld.enable = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  xdg.terminal-exec = {
-      enable = true;
-      settings.default = [ "kitty.desktop" ];
-    };
-
-  environment.sessionVariables = {
-    TERMINAL = "kitty";
-    TERM = "kitty";
-  };
-
 }
