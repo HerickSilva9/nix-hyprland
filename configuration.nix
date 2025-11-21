@@ -9,7 +9,6 @@
     [ # Include the results of the hardware scan.
       ./core/bootloader-grub.nix
       ./modules/packages-hyprland.nix
-      ./modules/services.nix
       ./audio
       ./desktop/hyprland
       ./virtualisation
