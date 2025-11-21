@@ -60,6 +60,8 @@
   nautilus gnome.gvfs sushi file-roller
   xdg-desktop-portal-gtk
 
+  fzf
+
   ] ++ [
   pkgs-unstable.zed-editor
   ];
