@@ -45,23 +45,17 @@
 
   nano
   wget
-  git
   curl
   kitty
   tree
   neofetch
   zip
   unzip
-  python3 python3Packages.pip python3Packages.virtualenv uv
   nix-output-monitor
   cowsay
   bat
   htop
   btop
-
-  neovim vim gcc wl-clipboard
-
-  rustup
 
   # Virtualisation
   # virt-manager
@@ -79,12 +73,10 @@
   discord
 
   ] ++ [
-  pkgs-unstable.zed-editor
   pkgs-unstable.rclone
   pkgs-unstable.libreoffice-fresh
   pkgs-unstable.google-chrome
   pkgs-unstable.firefox
-  pkgs-unstable.vscode
   ];
 
   security.pam.services.sddm = {
@@ -136,8 +128,6 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
-  programs.nix-ld.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
