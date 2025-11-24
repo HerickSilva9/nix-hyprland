@@ -12,7 +12,7 @@
       ./audio
       ./desktop/hyprland
       ./virtualisation
-      ./config/development
+      ./config
     ];
 
   networking.hostName = "nixos"; # Define your hostname.
