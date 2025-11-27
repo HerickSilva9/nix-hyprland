@@ -12,6 +12,9 @@
   # Rust
   rustup
 
+  # Node.js
+  nodePackages_latest.nodejs
+
   # Neovim
   neovim vim gcc wl-clipboard
 
