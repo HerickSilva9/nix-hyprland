@@ -15,13 +15,14 @@
   # Node.js
   nodePackages_latest.nodejs
 
+  vscode
+
   # Neovim
   neovim vim gcc wl-clipboard
 
   ] ++ [
 
   pkgs-unstable.zed-editor
-  pkgs-unstable.vscode
 
   ];
 
